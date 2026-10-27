@@ -1,5 +1,7 @@
+
 import DestinationsClient from "@/component/DestinationsClient";
-import TravlePlace from "@/component/TravlePlace";
+
+
 import { travleData } from "@/lib/data";
 import React from "react";
 
@@ -14,7 +16,7 @@ const AllTravleDestinations = async () => {
           <TravlePlace key={travlePlace._id} travlePlace={travlePlace} />
         ))}
       </div> */}
-      <DestinationsClient allTraveldestination={allTraveldestination} />
+      <DestinationsClient allTraveldestination={allTraveldestination}   />
     </div>
   );
 };

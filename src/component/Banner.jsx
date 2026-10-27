@@ -11,7 +11,7 @@ const Banner = () => {
         alt="Travel Banner"
         fill
         priority
-        className="object-cover"
+        className="object-cover w-auto h-auto" 
       />
 
       {/* Dark Overlay */}
