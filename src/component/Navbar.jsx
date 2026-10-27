@@ -24,10 +24,10 @@ const Navbar = () => {
             </li>
             <li>
               <Link
-                href="/my-bookings"
+                href="/all-travle-destination"
                 className="transition hover:text-blue-600"
               >
-                My Bookings
+                All Destination
               </Link>
             </li>
             <li>
