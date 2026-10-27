@@ -1,6 +1,7 @@
 "use server";
 
 import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
 
 export const createUser = async (formData) => {
   const newUsers = Object.fromEntries(formData.entries());
@@ -30,6 +31,7 @@ export const deletetravelaction = async (travleid) => {
   }
   const data =await res.json()
   console.log("after delete", data);
-  revalidatePath("/users");
-  return data;
+  revalidatePath("/all-travle-destination");
+  redirect("/all-travle-destination")
+
 };

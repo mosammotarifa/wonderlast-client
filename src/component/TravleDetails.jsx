@@ -51,7 +51,7 @@ const TravleDetails = ({ travleDetail,deletetravelaction }) => {
                     <AlertDialog.Body>
                       <p>
                         This will permanently delete{" "}
-                        <strong>My Awesome Project</strong> and all of its data.
+                        <strong>{travleDetail.destinationName}</strong> and all of its data.
                         This action cannot be undone.
                       </p>
                     </AlertDialog.Body>
@@ -59,7 +59,7 @@ const TravleDetails = ({ travleDetail,deletetravelaction }) => {
                       <Button slot="close" variant="tertiary">
                         Cancel
                       </Button>
-                      <Button onClick={()=>handleDelte(travleDetail._id)} slot="close" variant="danger">
+                      <Button onClick={()=>handleDelte(travleDetail._id)} variant="danger">
                         Delete Project
                       </Button>
                     </AlertDialog.Footer>
@@ -79,7 +79,7 @@ const TravleDetails = ({ travleDetail,deletetravelaction }) => {
               alt={travleDetail.destinationName}
               fill
               unoptimized
-              className="object-cover w-auto h-auto" 
+              className="object-cover " 
             />
 
             <span className="absolute left-6 top-6 rounded-full bg-white/95 px-5 py-2 text-sm font-semibold text-blue-600 shadow-md">
