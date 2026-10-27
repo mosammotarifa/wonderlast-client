@@ -1,3 +1,4 @@
+'use client'
 import React from "react";
 import Image from "next/image";
 import { Button, Input, Separator } from "@heroui/react";
@@ -145,7 +146,7 @@ const Footer = () => {
                 height={32}
                 width={32}
                 alt="Twitter"
-                className="rounded-2xl transition hover:opacity-70"
+                className="rounded-2xl transition hover:opacity-70 w-auto h-auto "
               />
             </a>
 

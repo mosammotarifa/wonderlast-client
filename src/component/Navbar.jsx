@@ -46,7 +46,7 @@ const Navbar = () => {
               height={100}
               width={100}
               alt="Wanderlast logo"
-              className="object-contain"
+              className="object-contain w-auto h-auto"
               priority
             />
           </Link>
