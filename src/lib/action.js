@@ -35,3 +35,22 @@ export const deletetravelaction = async (travleid) => {
   redirect("/all-travle-destination")
 
 };
+
+  export const updateTravleInfo= async(travleid, formData)=>{
+  const updatedInfo =Object .fromEntries(formData.entries())
+  const res=await fetch(`http://localhost:5000/users/${travleid}`,{
+    method:"PATCH",
+    headers:{
+      'content-type':'application/json'
+    },
+    body:JSON.stringify(updatedInfo)
+  })
+  if(!res.ok){
+    throw new Error("failed to feted updated data ")
+  }
+  const data = await res.json()
+  console.log(data)
+  revalidatePath("/all-travle-destination")
+  redirect("/all-travle-destination")
+  
+}

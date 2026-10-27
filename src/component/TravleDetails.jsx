@@ -1,13 +1,16 @@
 "use client";
 
 import { AlertDialog, Button } from "@heroui/react";
-
+import EditUserData from "./EditUserData";
 import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 
-const TravleDetails = ({ travleDetail,deletetravelaction }) => {
-  
+const TravleDetails = ({
+  travleDetail,
+  deletetravelaction,
+  updateUserData,
+}) => {
   const handleDelte = async (travleid) => {
     await deletetravelaction(travleid);
   };
@@ -29,12 +32,10 @@ const TravleDetails = ({ travleDetail,deletetravelaction }) => {
           </div>
 
           <div className="flex items-center gap-3">
-            <Link
-              href={`/all-travle-destination/${travleDetail._id}/edit`}
-              className="rounded-xl border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-700 shadow-sm transition hover:bg-slate-100"
-            >
-              ✎ Edit
-            </Link>
+            <EditUserData
+              edituser={travleDetail}
+              updateUserData={updateUserData}
+            />
 
             <AlertDialog>
               <Button variant="danger">Delete </Button>
@@ -51,15 +52,18 @@ const TravleDetails = ({ travleDetail,deletetravelaction }) => {
                     <AlertDialog.Body>
                       <p>
                         This will permanently delete{" "}
-                        <strong>{travleDetail.destinationName}</strong> and all of its data.
-                        This action cannot be undone.
+                        <strong>{travleDetail.destinationName}</strong> and all
+                        of its data. This action cannot be undone.
                       </p>
                     </AlertDialog.Body>
                     <AlertDialog.Footer>
                       <Button slot="close" variant="tertiary">
                         Cancel
                       </Button>
-                      <Button onClick={()=>handleDelte(travleDetail._id)} variant="danger">
+                      <Button
+                        onClick={() => handleDelte(travleDetail._id)}
+                        variant="danger"
+                      >
                         Delete Project
                       </Button>
                     </AlertDialog.Footer>
@@ -79,7 +83,7 @@ const TravleDetails = ({ travleDetail,deletetravelaction }) => {
               alt={travleDetail.destinationName}
               fill
               unoptimized
-              className="object-cover " 
+              className="object-cover w-auto h-auto"
             />
 
             <span className="absolute left-6 top-6 rounded-full bg-white/95 px-5 py-2 text-sm font-semibold text-blue-600 shadow-md">
